@@ -1,0 +1,21 @@
+/*
+International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows: "a" maps to ".-", "b" maps to "-...", "c" maps to "-.-.", and so on.
+*/
+
+class Solution {
+public:
+    int uniqueMorseRepresentations(vector<string>& words) {
+        vector<string> morse_word = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+        unordered_set<string> wordzz;
+        for( string word:words)
+        {
+            string str = "";
+            for(char ch:word)
+            {
+                str+=morse_word[ch-'a'];
+            }
+            wordzz.insert(str);
+        }
+        return wordzz.size();
+    }
+};
