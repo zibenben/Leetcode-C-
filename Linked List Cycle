@@ -1,0 +1,18 @@
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        ListNode *z = head; //define z and h to store head 
+        ListNode *h = head;
+        bool isHascycle = false;
+        while(h&&h->next)//when head and h-> next is not empty
+        {
+            z=z->next; //z direct to next
+            h=h->next->next;// h direct to next next
+            if(z==h)
+            { isHascycle =  true; break;}//out the while
+            else{isHascycle =  false;}
+        }
+        return isHascycle;
+    }
+};
+、
